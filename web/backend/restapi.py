@@ -13,6 +13,12 @@ task = api.model('Task', {
 
 TASKS = []
 
+def is_task_exists(task_detail):
+    for task in TASKS:
+        if task['task'] == task_detail:
+            return True
+    return False
+
 @ns.route('/')
 class TaskList(Resource):
     @ns.doc('list_tasks')
@@ -26,6 +32,8 @@ class TaskList(Resource):
     def post(self):
         """Create a new task"""
         new_task = api.payload
+        if is_task_exists(new_task['task']):
+            api.abort(400, "Task {} already exists".format(new_task['task']))
         new_task['id'] = len(TASKS) + 1
         TASKS.append(new_task)
         return new_task, 201
@@ -55,9 +63,12 @@ class Task(Resource):
     @ns.marshal_with(task)
     def put(self, id):
         """Update a task given its identifier"""
+        updated_task = api.payload
+        if is_task_exists(updated_task['task']):
+            api.abort(400, "Task {} already exists".format(updated_task['task']))
         for task in TASKS:
             if task['id'] == id:
-                task.update(api.payload)
+                task.update(updated_task)
                 return task
         api.abort(404, "Task {} doesn't exist".format(id))
 
