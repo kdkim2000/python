@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js와 Bootstrap 예제</title>
+    <!-- Vue.js를 CDN을 통해 가져옵니다. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <!-- Bootstrap CSS를 CDN을 통해 가져옵니다. -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="alert alert-primary" role="alert">
+            <!-- Vue.js의 데이터 바인딩을 사용하여, message 변수를 출력합니다. -->
+            {{ message }}
+        </div>
+    </div>
+
+    <script>
+        // Vue 인스턴스를 생성합니다.
+        new Vue({
+            // '#app' 요소에 Vue를 적용합니다.
+            el: '#app',
+            // message 데이터를 정의합니다.
+            data: {
+                message: '안녕하세요, Vue와 Bootstrap!'
+            }
+        });
+    </script>
+</body>
+</html>

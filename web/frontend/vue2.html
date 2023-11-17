@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue.js와 Bootstrap 예제</title>
+    <!-- Vue.js를 CDN을 통해 가져옵니다. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <!-- Bootstrap CSS를 CDN을 통해 가져옵니다. -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- Bootstrap JavaScript를 CDN을 통해 가져옵니다. -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="app" class="container">
+        <!-- Bootstrap의 버튼 컴포넌트를 사용합니다. -->
+        <button type="button" class="btn btn-primary" @click="toggleAlert">
+            알림 토글
+        </button>
+
+        <!-- Bootstrap의 알림 컴포넌트를 사용합니다. -->
+        <div class="alert alert-warning" role="alert" v-if="isVisible">
+            {{ message }}
+        </div>
+    </div>
+
+    <script>
+        // Vue 인스턴스를 생성합니다.
+        new Vue({
+            // '#app' 요소에 Vue를 적용합니다.
+            el: '#app',
+            // message와 isVisible 데이터를 정의합니다.
+            data: {
+                message: '안녕하세요, Vue와 Bootstrap!',
+                isVisible: true
+            },
+            // 알림의 표시 여부를 변경하는 메서드를 정의합니다.
+            methods: {
+                toggleAlert: function() {
+                    this.isVisible = !this.isVisible;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

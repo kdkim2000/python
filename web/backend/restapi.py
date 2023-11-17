@@ -1,8 +1,10 @@
 from flask import Flask, request
 from flask_restx import Api, Resource, fields
+from flask_cors import CORS
 
 app = Flask(__name__)
-api = Api(app, version='1.0', title='Task API', description='A simple Task API')
+CORS(app) # 이 부분이 CORS를 적용하는 부분입니다.
+api = Api(app)
 
 ns = api.namespace('tasks', description='Task operations')
 
@@ -12,12 +14,6 @@ task = api.model('Task', {
 })
 
 TASKS = []
-
-def is_task_exists(task_detail):
-    for task in TASKS:
-        if task['task'] == task_detail:
-            return True
-    return False
 
 @ns.route('/')
 class TaskList(Resource):
@@ -32,8 +28,6 @@ class TaskList(Resource):
     def post(self):
         """Create a new task"""
         new_task = api.payload
-        if is_task_exists(new_task['task']):
-            api.abort(400, "Task {} already exists".format(new_task['task']))
         new_task['id'] = len(TASKS) + 1
         TASKS.append(new_task)
         return new_task, 201
@@ -63,12 +57,9 @@ class Task(Resource):
     @ns.marshal_with(task)
     def put(self, id):
         """Update a task given its identifier"""
-        updated_task = api.payload
-        if is_task_exists(updated_task['task']):
-            api.abort(400, "Task {} already exists".format(updated_task['task']))
         for task in TASKS:
             if task['id'] == id:
-                task.update(updated_task)
+                task.update(api.payload)
                 return task
         api.abort(404, "Task {} doesn't exist".format(id))
 
