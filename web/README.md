@@ -239,6 +239,7 @@ Vue.js에서 Bootstrap을 사용하기 위해서는 Bootstrap Vue를 사용하�
 Bootstrap Vue를 사용하면 Vue.js 컴포넌트 형태로 Bootstrap 기능을 쉽게 사용할 수 있지만, 별도의 설치 및 설정이 필요합니다. 따라서 여기서는 직접 CDN을 통해 Bootstrap을 불러와 사용하는 방법을 소개하겠습니다.
 <br>
 아래 예제에서는 Bootstrap의 버튼, 알림, 드롭다운 컴포넌트를 사용합니다. Calendar 컴포넌트는 Bootstrap 자체에서 제공하지 않으므로, 이를 대체할 수 있는 Datepicker 컴포넌트를 사용하겠습니다. 이 컴포넌트는 jQuery와 Bootstrap의 JavaScript가 필요하므로, 이 둘도 함께 불러옵니다.
+
 ```html
 <!DOCTYPE html>
 <html>
