@@ -231,14 +231,11 @@ if __name__ == "__main__":
 | **Vuetify** | Vue.js를 위한 Material Design UI 라이브러리입니다. | 컴포넌트의 디자인과 레이아웃을 쉽게 구현할 수 있습니다. |
 
 ### bootstrap
->bootstrap 에 대해 쉽게 설명해 주고 Vue.js 에서 활용할 수 있는 방법을 알려 줘. 예제를 제공해 주는 데 CDN 환경에서 실행 가능하도록 해줘. 예제 에는 Button, Alert 등 화면에서 간단히 확인 가능 한 것들을 포함해 줘.
->>Bootstrap은 웹사이트를 디자인하는 데 사용되는 가장 인기있는 프레임워크 중 하나입니다. HTML, CSS, 그리고 JavaScript로 구성되어 있으며, 반응형 웹사이트를 쉽게 만들 수 있도록 도와줍니다.
-<br>
-Vue.js에서 Bootstrap을 사용하기 위해서는 Bootstrap Vue를 사용하거나 직접 CDN을 통해 Bootstrap을 불러와 사용할 수 있습니다.
-<br>
-Bootstrap Vue를 사용하면 Vue.js 컴포넌트 형태로 Bootstrap 기능을 쉽게 사용할 수 있지만, 별도의 설치 및 설정이 필요합니다. 따라서 여기서는 직접 CDN을 통해 Bootstrap을 불러와 사용하는 방법을 소개하겠습니다.
-<br>
-아래 예제에서는 Bootstrap의 버튼, 알림, 드롭다운 컴포넌트를 사용합니다. Calendar 컴포넌트는 Bootstrap 자체에서 제공하지 않으므로, 이를 대체할 수 있는 Datepicker 컴포넌트를 사용하겠습니다. 이 컴포넌트는 jQuery와 Bootstrap의 JavaScript가 필요하므로, 이 둘도 함께 불러옵니다.
+>bootstrap 에 대해 쉽게 설명해 주고 Vue.js 에서 활용할 수 있는 방법을 알려 줘. 예제를 제공해 주는 데 CDN 환경에서 실행 가능하도록 해줘. 예제 에는 Button, Alert 등 화면에서 간단히 확인 가능 한 것들을 포함해 줘.<br>
+>>Bootstrap은 웹사이트를 디자인하는 데 사용되는 가장 인기있는 프레임워크 중 하나입니다. HTML, CSS, 그리고 JavaScript로 구성되어 있으며, 반응형 웹사이트를 쉽게 만들 수 있도록 도와줍니다.<br>
+>>Vue.js에서 Bootstrap을 사용하기 위해서는 Bootstrap Vue를 사용하거나 직접 CDN을 통해 Bootstrap을 불러와 사용할 수 있습니다.<br>
+>>Bootstrap Vue를 사용하면 Vue.js 컴포넌트 형태로 Bootstrap 기능을 쉽게 사용할 수 있지만, 별도의 설치 및 설정이 필요합니다. 따라서 여기서는 직접 CDN을 통해 Bootstrap을 불러와 사용하는 방법을 소개하겠습니다.<br>
+>>아래 예제에서는 Bootstrap의 버튼, 알림, 드롭다운 컴포넌트를 사용합니다. Calendar 컴포넌트는 Bootstrap 자체에서 제공하지 않으므로, 이를 대체할 수 있는 Datepicker 컴포넌트를 사용하겠습니다. 이 컴포넌트는 jQuery와 Bootstrap의 JavaScript가 필요하므로, 이 둘도 함께 불러옵니다.
 
 ```html
 <!DOCTYPE html>
