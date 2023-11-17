@@ -382,9 +382,7 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 >> 해당 코드는 Python의 Flask 및 Flask-RESTx 라이브러리를 사용하여 작성된 Task 관리를 위한 백엔드 프로그램입니다.
-<br>
-이 프로그램은 다음과 같은 기능을 제공합니다:
-<br>
+>>이 프로그램은 다음과 같은 기능을 제공합니다:
 >><li>모든 Task를 목록으로 반환(GET /tasks/)
 >><li>새 Task를 생성(POST /tasks/)
 >><li>주어진 식별자를 가진 Task를 반환(GET /tasks/{id})
